@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PieceCombat.Units;
+using UnityEngine;
 
 namespace PieceCombat
 {

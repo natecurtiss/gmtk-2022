@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PieceCombat.Units;
+using UnityEngine;
 
 namespace PieceCombat
 {
@@ -30,7 +31,7 @@ namespace PieceCombat
 
         public void Begin(int diceRoll)
         {
-            _unit = AvailableUnits.Instance.Units[diceRoll];
+            _unit = AvailableUnits.Instance.Units[diceRoll - 1];
             _isPlacing = true;
         }
 
