@@ -9,6 +9,7 @@ namespace PieceCombat
         [SerializeField] UnityEvent _onHover;
         [SerializeField] UnityEvent _onPlace;
         [SerializeField] Vector3 _spawnOffset;
+        [field: SerializeField] public UnitType[] Allowed { get; private set; }
         
         public void Hover(Unit unit)
         {

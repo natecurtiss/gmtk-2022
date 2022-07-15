@@ -21,8 +21,9 @@ namespace PieceCombat
             _onRoll.Invoke(result);
             Debug.Log($"Dice Roll: {result}.");
             _isCooledDown = false;
-            StartCoroutine(Cooldown());
         }
+
+        public void CoolDown() => StartCoroutine(Cooldown());
 
         IEnumerator Cooldown()
         {

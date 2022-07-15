@@ -117,3 +117,4 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _spawnOffset: {x: 0, y: 0, z: 0}
+  <Allowed>k__BackingField: 0000000001000000
