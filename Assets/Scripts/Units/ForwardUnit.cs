@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace PieceCombat
+namespace PieceCombat.Units
 {
-    class Unit_Forward : Unit
+    class ForwardUnit : Unit
     {
         Rigidbody _rigidbody;
 
@@ -11,7 +11,7 @@ namespace PieceCombat
         protected override void Go()
         {
             var oldPos = _rigidbody.position;
-            var newPos = oldPos + transform.right * Rules.UNIT_SPEED;
+            var newPos = oldPos + transform.right * (Rules.UNIT_SPEED * Time.fixedDeltaTime);
             _rigidbody.MovePosition(newPos);
         }
     }

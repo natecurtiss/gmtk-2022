@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace PieceCombat
+namespace PieceCombat.Units
 {
     abstract class Unit : MonoBehaviour
     {

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PieceCombat.Units;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace PieceCombat
@@ -9,7 +10,11 @@ namespace PieceCombat
         [SerializeField] UnityEvent _onPlace;
         [SerializeField] Vector3 _spawnOffset;
         
-        public void Hover(Unit unit) => _onHover.Invoke();
+        public void Hover(Unit unit)
+        {
+            Debug.Log($"{gameObject.name} // {unit} // Hover!");
+            _onHover.Invoke();
+        }
 
         public void Place(Unit unit)
         {
