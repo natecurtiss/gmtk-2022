@@ -10,30 +10,69 @@ namespace PieceCombat
         [SerializeField] UnityEvent _onPlace;
         bool _isPlacing;
         Unit _unit;
+        SpawnPoint _hover;
 
         void Update()
         {
             if (!_isPlacing)
+            {
+                if (_hover != null)
+                    _hover.StopHover();
+                _hover = null;
                 return;
+            }
             if (Physics.Raycast(Mouse(), out var hit))
             {
                 if (hit.collider.TryGetComponent<SpawnPoint>(out var spawn))
                 {
                     if (!spawn.Allowed.Contains(_unit.Type))
+                    {
+                        if (_hover != null)
+                            _hover.StopHover();
+                        _hover = null;
                         return;
+                    }
+
                     if (spawn.IsOccupied)
+                    {
+                        if (_hover != null)
+                            _hover.StopHover();
+                        _hover = null;
                         return;
+                    }
+                    
                     if (Input.GetMouseButtonDown(0))
                     {
                         spawn.Place(_unit);
                         _onPlace.Invoke();
                         _isPlacing = false;
+                        if (_hover != null)
+                            _hover.StopHover();
+                        _hover = null;
                     }
                     else
                     {
-                        spawn.Hover(_unit);
+                        if (_hover != spawn)
+                        {
+                            if (_hover != null)
+                                _hover.StopHover();
+                            spawn.Hover(_unit);
+                            _hover = spawn;
+                        }
                     }
                 }
+                else
+                {
+                    if (_hover != null)
+                        _hover.StopHover();
+                    _hover = null;
+                }
+            }
+            else
+            {
+                if (_hover != null)
+                    _hover.StopHover();
+                _hover = null;
             }
         }
 

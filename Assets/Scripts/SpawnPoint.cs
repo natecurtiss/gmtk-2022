@@ -8,6 +8,7 @@ namespace PieceCombat
     class SpawnPoint : MonoBehaviour
     {
         [SerializeField] UnityEvent _onHover;
+        [SerializeField] UnityEvent _onStopHover;
         [SerializeField] UnityEvent _onPlace;
         [SerializeField] Vector3 _spawnOffset;
         [field: SerializeField] public UnitType[] Allowed { get; private set; }
@@ -25,12 +26,9 @@ namespace PieceCombat
                 IsOccupied = false;
         }
 
-        public void Hover(Unit unit)
-        {
-            Debug.Log($"{gameObject.name} // {unit} // Hover!");
-            _onHover.Invoke();
-        }
-
+        public void Hover(Unit unit) => _onHover.Invoke();
+        public void StopHover() => _onStopHover.Invoke();
+        
         public void Place(Unit unit)
         {
             _onPlace.Invoke();
