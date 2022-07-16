@@ -19,20 +19,26 @@ namespace PieceCombat
         
         WaitForSeconds _waitForCooldown;
         bool _isCooledDown = true;
+        bool _hitDown;
         bool _isPlaced;
         float _timer;
 
-        void Awake() => _waitForCooldown = new(_cooldown);
+        void Awake()
+        {
+            _waitForCooldown = new(_cooldown - 0.1f);
+            _timer = _cooldown;
+        }
 
         void Update()
         {
-            if (_isCooledDown)
+            if (_isCooledDown && _hitDown)
                 return;
-            _timer -= Time.deltaTime;
-            if (_timer <= 0)
+            _timer += Time.deltaTime;
+            if (_timer >= _cooldown)
             {
-                _timer = 0f;
+                _timer = _cooldown;
                 _isCooledDown = true;
+                _hitDown = false;
                 if (!_isPlaced)
                     _onFinishCooldown.Invoke();
             }
@@ -46,7 +52,7 @@ namespace PieceCombat
             var result = Random.Range(1, 7);
             _onRoll.Invoke(result);
             _isCooledDown = false;
-            _timer = _cooldown;
+            _timer = 0f;
 
             var unit = AvailableUnits.Instance.Units[result - 1];
             if (unit is BlockerUnit or TrapUnit)
@@ -66,6 +72,8 @@ namespace PieceCombat
 
         IEnumerator Cooldown()
         {
+            yield return new WaitForSeconds(0.1f);
+            _hitDown = true;
             yield return _waitForCooldown;
             _isCooledDown = true;
         }

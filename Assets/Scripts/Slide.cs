@@ -10,6 +10,6 @@ namespace PieceCombat
         [SerializeField] float _duration = 0.2f;
 
         void Awake() => _slider = GetComponent<Slider>();
-        public void Finish() => _slider.DOValue(1f, _duration);
+        public void Finish() => _slider.DOValue(0f, _duration);
     }
 }
