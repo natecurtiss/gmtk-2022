@@ -5,7 +5,7 @@ namespace PieceCombat.Enemies
     class LEnemy : Enemy
     {
         float _distance;
-        EnemyDir _direction = EnemyDir.Forward;
+        EnemyDir _direction = EnemyDir.Right;
         Rigidbody _rigidbody;
         Vector3 _forward;
 
@@ -45,12 +45,16 @@ namespace PieceCombat.Enemies
                 _forward *= -1;
             }
 
-            _direction = _direction switch
+            if (_direction == EnemyDir.Forward && _distance >= _tileLength)
             {
-                EnemyDir.Forward when _distance >= _tileLength => EnemyDir.Right,
-                EnemyDir.Right when _distance >= _tileLength * 2 => EnemyDir.Forward,
-                _ => _direction
-            };
+                _direction = EnemyDir.Right;
+                _distance = 0f;
+            }
+            else if (_direction == EnemyDir.Right && _distance >= _tileLength * 2)
+            {
+                _direction = EnemyDir.Forward;
+                _distance = 0f;
+            }
         }
     }
 }
