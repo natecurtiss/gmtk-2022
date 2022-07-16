@@ -1,10 +1,13 @@
-﻿using PieceCombat.Units;
+﻿using System.Linq;
+using PieceCombat.Units;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace PieceCombat
 {
     class Placer : MonoBehaviour
     {
+        [SerializeField] UnityEvent _onPlace;
         bool _isPlacing;
         Unit _unit;
 
@@ -16,9 +19,12 @@ namespace PieceCombat
             {
                 if (hit.collider.TryGetComponent<SpawnPoint>(out var spawn))
                 {
+                    if (!spawn.Allowed.Contains(_unit.Type))
+                        return;
                     if (Input.GetMouseButtonDown(0))
                     {
                         spawn.Place(_unit);
+                        _onPlace.Invoke();
                         _isPlacing = false;
                     }
                     else

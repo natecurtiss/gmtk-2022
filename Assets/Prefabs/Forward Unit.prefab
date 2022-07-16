@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7403935028515903813}
   - component: {fileID: 6846024684666972931}
   - component: {fileID: 6027837666241258095}
+  - component: {fileID: -2871724833289615556}
   m_Layer: 3
   m_Name: Forward Unit
   m_TagString: Untagged
@@ -94,7 +95,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7403935028515903812}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -130,3 +131,21 @@ MonoBehaviour:
   _onStart:
     m_PersistentCalls:
       m_Calls: []
+  <Type>k__BackingField: 0
+--- !u!114 &-2871724833289615556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7403935028515903812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1594db8660884ff39995a01cc209e7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onExplode:
+    m_PersistentCalls:
+      m_Calls: []
+  _end: 19
+  _compare: 0
