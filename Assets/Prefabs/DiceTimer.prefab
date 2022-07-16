@@ -199,6 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7446575561510192814}
   - component: {fileID: 2112974880711385917}
+  - component: {fileID: 6352577033564051289}
   m_Layer: 0
   m_Name: DiceTimer
   m_TagString: Untagged
@@ -267,7 +268,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 2975898420864511272}
   m_HandleRect: {fileID: 0}
@@ -279,3 +280,16 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6352577033564051289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8155334134983046374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6134011263c43afba031f6471e94252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 0.5

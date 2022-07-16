@@ -21,6 +21,8 @@ namespace PieceCombat
                 {
                     if (!spawn.Allowed.Contains(_unit.Type))
                         return;
+                    if (spawn.IsOccupied)
+                        return;
                     if (Input.GetMouseButtonDown(0))
                     {
                         spawn.Place(_unit);
