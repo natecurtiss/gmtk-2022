@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 6599193644426331071}
   - component: {fileID: 5656099386848567698}
   - component: {fileID: 614442106426652675}
+  - component: {fileID: 1755834901}
   m_Layer: 0
   m_Name: heart
   m_TagString: Untagged
@@ -166,6 +167,31 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1755834901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011132697002580482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 444764e9ae68db6468f5b55886a95cf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 0.1
+  jigPosition: 0
+  positionJigAmount: {x: 0, y: 0, z: 0}
+  positionFrequency: 10
+  positionTime: 0
+  jigRotation: 0
+  rotationJigAmount: {x: 0, y: 0, z: 0}
+  rotationFrequency: 10
+  rotationTime: 0
+  jigScale: 1
+  scaleJigAmount: {x: 20, y: -20, z: 20}
+  scaleFrequency: 15
+  scaleTime: 0
 --- !u!1 &7464427022015821276
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +236,7 @@ GameObject:
   - component: {fileID: 5820223990179047068}
   - component: {fileID: 2970343244049240066}
   - component: {fileID: 6646972865400081629}
+  - component: {fileID: 818808345}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -283,3 +310,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &818808345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7544350172601804918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791c59f77e887e2479af1ee07f0afce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spin: {x: 0, y: 360, z: 180}
