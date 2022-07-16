@@ -2,7 +2,7 @@
 
 namespace PieceCombat.Enemies
 {
-    class DiagonalEnemy : MonoBehaviour
+    class DiagonalEnemy : Enemy
     {
         Rigidbody _rigidbody;
         int _facing = 1;
@@ -15,6 +15,8 @@ namespace PieceCombat.Enemies
 
         void Update()
         {
+            if (!CanMove)
+                return;
             var oldPos = _rigidbody.position;
             var dir = -transform.right + transform.forward;
             dir.Normalize();

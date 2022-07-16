@@ -2,9 +2,10 @@
 {
     class SquiggleEnemy : Enemy
     {
-        void Update()
+        void FixedUpdate()
         {
-            
+            if (!CanMove)
+                return;
         }
     }
 }

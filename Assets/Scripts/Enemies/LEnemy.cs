@@ -4,9 +4,10 @@ namespace PieceCombat.Enemies
 {
     class LEnemy : Enemy
     {
-        void Update()
+        void FixedUpdate()
         {
-            
+            if (!CanMove)
+                return;
         }
     }
 }

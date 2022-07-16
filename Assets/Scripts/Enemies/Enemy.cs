@@ -8,12 +8,21 @@ namespace PieceCombat.Enemies
     {
         [SerializeField] UnityEvent _onExplode;
         [SerializeField] int _damage = 1;
+        protected bool CanMove { get; private set; }
 
         void OnTriggerEnter(Collider col)
         {
-            if (col.TryGetComponent<Unit>(out _))
+            if (col.TryGetComponent<Unit>(out var unit))
             {
-                Explode();
+                if (unit is BlockerUnit)
+                {
+                    // TODO: Wait for destroy.
+                    CanMove = false;
+                }
+                else
+                {
+                    Explode();
+                }
             }
             else if (col.TryGetComponent<HomeBase>(out var homeBase))
             {
