@@ -5,28 +5,34 @@ namespace PieceCombat
 {
     class SlideUp : MonoBehaviour
     {
-        Vector3 _initial;
-        [SerializeField] float _up = 0.5f;
+        Color _initial;
+        Color _to;
+        MeshRenderer _renderer;
+        [SerializeField] float _alpha = 0.5f;
         [SerializeField] float _duration = 0.2f;
-        bool _isUp;
+        bool _isFaded;
 
-        void Awake() => _initial = transform.position;
+        void Awake()
+        {
+            _renderer = GetComponent<MeshRenderer>();
+            _initial = _renderer.material.color;
+            _to = new(_initial.r, _initial.g, _initial.b, _alpha);
+        }
 
         public void Do()
         {
-            if (_isUp)
+            if (_isFaded)
                 return;
-            _isUp = true;
-            transform.DOMoveY(_initial.y + _up, _duration);
+            _isFaded = true;
+            _renderer.material.DOColor(_to, _duration);
         }
 
         public void Stop()
         {
-            if (!_isUp)
+            if (!_isFaded)
                 return;
-            Debug.Log("stop");
-            _isUp = false;
-            transform.DOMoveY(_initial.y, _duration);
+            _isFaded = false;
+            _renderer.material.DOColor(_initial, _duration);
         }
     }
 }

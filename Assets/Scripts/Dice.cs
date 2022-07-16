@@ -1,11 +1,17 @@
+using System;
 using System.Collections;
+using PieceCombat.Units;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 namespace PieceCombat
 {
     class Dice : MonoBehaviour
     {
+        public static event Action OnRollAnywhereUnit;   
+        public static event Action OnRollFrontUnit;   
+        
         [SerializeField] float _cooldown = 1f;
         [SerializeField] UnityEvent<int> _onRoll;
         [SerializeField] UnityEvent<float> _onCooldownTick;
@@ -39,9 +45,15 @@ namespace PieceCombat
                 return;
             var result = Random.Range(1, 7);
             _onRoll.Invoke(result);
-            Debug.Log($"Dice Roll: {result}.");
             _isCooledDown = false;
             _timer = _cooldown;
+
+            var unit = AvailableUnits.Instance.Units[result - 1];
+            if (unit is BlockerUnit or TrapUnit)
+                OnRollAnywhereUnit?.Invoke();
+            else
+                OnRollFrontUnit?.Invoke();
+            
             StartCoroutine(Cooldown());
         }
 

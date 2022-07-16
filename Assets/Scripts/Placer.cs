@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using PieceCombat.Units;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,6 +8,8 @@ namespace PieceCombat
 {
     class Placer : MonoBehaviour
     {
+        public static event Action OnPlace;
+        
         [SerializeField] UnityEvent _onPlace;
         bool _isPlacing;
         Unit _unit;
@@ -43,6 +46,7 @@ namespace PieceCombat
                     
                     if (Input.GetMouseButtonDown(0))
                     {
+                        OnPlace?.Invoke();
                         spawn.Place(_unit);
                         _onPlace.Invoke();
                         _isPlacing = false;
