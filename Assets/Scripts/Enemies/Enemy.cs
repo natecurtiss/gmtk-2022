@@ -8,7 +8,7 @@ namespace PieceCombat.Enemies
     {
         [SerializeField] UnityEvent _onExplode;
         [SerializeField] int _damage = 1;
-        protected bool CanMove { get; private set; }
+        protected bool CanMove { get; private set; } = true;
 
         void OnTriggerEnter(Collider col)
         {
