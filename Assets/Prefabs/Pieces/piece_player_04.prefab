@@ -99,13 +99,13 @@ MonoBehaviour:
   power: 0.1
   jigPosition: 1
   positionJigAmount: {x: 0, y: 2, z: 0}
-  positionFrequency: 4
+  positionFrequency: 12
   positionTime: 0
   jigRotation: 0
   rotationJigAmount: {x: 0, y: 0, z: 0}
   rotationFrequency: 10
   rotationTime: 0
-  jigScale: 0
+  jigScale: 1
   scaleJigAmount: {x: 0.1, y: -0.1, z: 0.1}
   scaleFrequency: 10
   scaleTime: 0
