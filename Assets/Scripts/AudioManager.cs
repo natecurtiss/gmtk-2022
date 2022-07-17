@@ -61,6 +61,8 @@ namespace PieceCombat
 
                 if (_clip != null) {
                     MusicSource.clip = _clip;
+                    MusicSource.loop = _name == "GMTK_Main_Soundtrack";
+
                     MusicSource.Play();
                 }
             }
