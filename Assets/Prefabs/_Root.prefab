@@ -5731,7 +5731,19 @@ MonoBehaviour:
         m_CallState: 2
   _onDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2976827472104473592}
+        m_TargetAssemblyTypeName: PieceCombat.SceneTransition, Assembly-CSharp
+        m_MethodName: Lose
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _startHealth: 3
 --- !u!1 &5611559082148034178 stripped
 GameObject:

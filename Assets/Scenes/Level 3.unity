@@ -172,7 +172,7 @@ PrefabInstance:
     - target: {fileID: 1205848876585514285, guid: cb0b2c0b9e0d4b947b69702805b77d11,
         type: 3}
       propertyPath: _spawns.Array.data[0].<Delay>k__BackingField
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1205848876585514285, guid: cb0b2c0b9e0d4b947b69702805b77d11,
         type: 3}
