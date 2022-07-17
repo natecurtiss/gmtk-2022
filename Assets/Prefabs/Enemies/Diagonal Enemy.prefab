@@ -7,6 +7,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 674853692364976674, guid: fbcbbdba68159ff49b0fee19f0e4b717,
+        type: 3}
+      propertyPath: _onExplode.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 773190237}
+    - target: {fileID: 674853692364976674, guid: fbcbbdba68159ff49b0fee19f0e4b717,
+        type: 3}
+      propertyPath: _onExplode.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: UnOccupyTile
+      objectReference: {fileID: 0}
     - target: {fileID: 6964784947970418518, guid: fbcbbdba68159ff49b0fee19f0e4b717,
         type: 3}
       propertyPath: m_Name
@@ -72,9 +82,31 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8465002580670870960, guid: fbcbbdba68159ff49b0fee19f0e4b717,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465002580670870962, guid: fbcbbdba68159ff49b0fee19f0e4b717,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e42d8a9b68e8fcc4fa149ed1220d3e09, type: 2}
     m_RemovedComponents:
     - {fileID: -3006104823396425440, guid: fbcbbdba68159ff49b0fee19f0e4b717, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fbcbbdba68159ff49b0fee19f0e4b717, type: 3}
+--- !u!114 &6430312347207754470 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6805971810026172571, guid: fbcbbdba68159ff49b0fee19f0e4b717,
+    type: 3}
+  m_PrefabInstance: {fileID: 526538867903222397}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24cf0b925ed54f78899a92b074c706a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7487594255226860836 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6964784947970418521, guid: fbcbbdba68159ff49b0fee19f0e4b717,
@@ -101,11 +133,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onExplode:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6430312347207754470}
+        m_TargetAssemblyTypeName: PieceCombat.UnParent, Assembly-CSharp
+        m_MethodName: Do
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8230080589171533772}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _damage: 1
   _leftWall: 15
   _rightWall: -15
   _snap: 3
+--- !u!198 &8230080589171533772 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8465002580670870961, guid: fbcbbdba68159ff49b0fee19f0e4b717,
+    type: 3}
+  m_PrefabInstance: {fileID: 526538867903222397}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4010881519946291938
 PrefabInstance:
   m_ObjectHideFlags: 0
