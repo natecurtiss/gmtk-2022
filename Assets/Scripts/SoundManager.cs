@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace PieceCombat
 {
-    class AudioManager : MonoBehaviour
+    class SoundManager : MonoBehaviour
     {
-        public static AudioManager Instance { get; private set; }
+        public static SoundManager Instance { get; private set; }
         [SerializeField] int _maxAudioSources = 20;
         readonly Queue<AudioSource> _audioSources = new();
 
