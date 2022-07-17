@@ -31,6 +31,11 @@ namespace PieceCombat
             {
                 _isDead = true;
                 _onDie.Invoke();
+                CameraShake.Instance.DoBig();
+            }
+            else
+            {
+                CameraShake.Instance.Do();
             }
         }
     }

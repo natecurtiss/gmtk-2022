@@ -20,6 +20,8 @@ namespace PieceCombat.Enemies
             {
                 if (!CanMove && _blocker != null && !_blocker.IsBlocking)
                     CanMove = true;
+                else if (!CanMove && _blocker == null)
+                    CanMove = true;
                 return;
             }
             _blockTimer -= Time.deltaTime;
@@ -60,6 +62,7 @@ namespace PieceCombat.Enemies
             _onExplode.Invoke();
             if (Tile != null) 
                 Tile.IsOccupied = false;
+            CameraShake.Instance.Do();
             Destroy(gameObject);
         }
 
