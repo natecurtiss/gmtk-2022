@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 6027837666241258095}
   - component: {fileID: -2871724833289615556}
   - component: {fileID: 8048605311028662154}
+  - component: {fileID: 2841734354353612559}
+  - component: {fileID: 916254984309412309}
   m_Layer: 3
   m_Name: Forward Unit
   m_TagString: Untagged
@@ -135,7 +137,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onExplode:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 916254984309412309}
+        m_TargetAssemblyTypeName: PieceCombat.Shrink, Assembly-CSharp
+        m_MethodName: Do
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _end: 17
   _compare: 0
 --- !u!135 &8048605311028662154
@@ -151,6 +165,46 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!114 &2841734354353612559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7403935028515903812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b09cfdfac7b01b54e90cd404323d15b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &916254984309412309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7403935028515903812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 541cdcc3d9dd45ee9a963943972f8e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 0.4
+  _onFinish:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2841734354353612559}
+        m_TargetAssemblyTypeName: PieceCombat.DestroyObject, Assembly-CSharp
+        m_MethodName: Do
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2880293344248993535
 PrefabInstance:
   m_ObjectHideFlags: 0

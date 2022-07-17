@@ -18,7 +18,6 @@ namespace PieceCombat
                 if (transform.position.x >= _end)
                 {
                     _onExplode.Invoke();
-                    Destroy(gameObject);
                 }
             }
             else
