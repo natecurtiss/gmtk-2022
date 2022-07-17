@@ -25,6 +25,7 @@ namespace PieceCombat
                 if (transform.position.x <= _end)
                 {
                     OnHitHomeBase?.Invoke();
+                    Spawner.Enemies--;
                     _onExplode.Invoke();
                     Destroy(gameObject);
                 }
