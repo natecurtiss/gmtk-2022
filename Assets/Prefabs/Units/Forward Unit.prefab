@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8048605311028662154}
   - component: {fileID: 2841734354353612559}
   - component: {fileID: 916254984309412309}
+  - component: {fileID: 2945019610509315646}
   m_Layer: 3
   m_Name: Forward Unit
   m_TagString: Untagged
@@ -150,6 +151,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2945019610509315646}
+        m_TargetAssemblyTypeName: PieceCombat.PlaySound, Assembly-CSharp
+        m_MethodName: Do
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _end: 17
   _compare: 0
 --- !u!135 &8048605311028662154
@@ -205,6 +218,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2945019610509315646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7403935028515903812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f47c1f5bd7455893a04f1b09cb01ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 952f6b40377d5844c8e4ea2676256f81, type: 3}
+  - {fileID: 8300000, guid: 4e79686f8ac41804bb9e97bc3fdea597, type: 3}
+  _volume: 0
+  _isUI: 1
 --- !u!1001 &2880293344248993535
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,11 +11,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _onExplode.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1386831516}
+      objectReference: {fileID: 7942497581508013723}
     - target: {fileID: 674853692364976674, guid: fbcbbdba68159ff49b0fee19f0e4b717,
         type: 3}
       propertyPath: _onExplode.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: UnOccupyTile
+      value: Do
       objectReference: {fileID: 0}
     - target: {fileID: 6964784947970418518, guid: fbcbbdba68159ff49b0fee19f0e4b717,
         type: 3}
@@ -135,7 +135,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _damage: 1
+      - m_Target: {fileID: 7942497581508013723}
+        m_TargetAssemblyTypeName: PieceCombat.PlaySound, Assembly-CSharp
+        m_MethodName: Do
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _tileLength: 6
   _leftWall: 15
   _rightWall: -15
@@ -152,6 +163,18 @@ ParticleSystem:
     type: 3}
   m_PrefabInstance: {fileID: 2590515838413558305}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7942497581508013723 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5605353254155648186, guid: fbcbbdba68159ff49b0fee19f0e4b717,
+    type: 3}
+  m_PrefabInstance: {fileID: 2590515838413558305}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4851713170595280247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f47c1f5bd7455893a04f1b09cb01ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &9043499782433628858 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6805971810026172571, guid: fbcbbdba68159ff49b0fee19f0e4b717,

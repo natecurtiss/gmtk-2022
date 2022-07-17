@@ -15,6 +15,7 @@ namespace PieceCombat
     {
         [SerializeField] Spawn[] _spawns;
         [SerializeField] UnityEvent _onWaveFinished;
+        [SerializeField] UnityEvent _onSpawn;
         [SerializeField] float _tileLength = 6f;
         [SerializeField] Vector3 _spawnOffset;
 
@@ -54,6 +55,7 @@ namespace PieceCombat
                     {
                         _last = Instantiate(_remaining[0].Enemy, spawnPoint.position + _spawnOffset, Quaternion.identity);
                         _remaining.RemoveAt(0);
+                        _onSpawn.Invoke();
                         if (_remaining.Count == 0) 
                             _last.Spawner = this;
                     }
@@ -64,6 +66,7 @@ namespace PieceCombat
                 {
                     _last = Instantiate(_remaining[0].Enemy, spawnPoint.position + _spawnOffset, Quaternion.identity);
                     _remaining.RemoveAt(0);
+                    _onSpawn.Invoke();
                     if (_remaining.Count == 0) 
                         _last.Spawner = this;
                 }

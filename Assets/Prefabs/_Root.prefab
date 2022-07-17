@@ -430,6 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5611559080492377516}
   - component: {fileID: 5611559080492377517}
+  - component: {fileID: 7371927580192752168}
   m_Layer: 0
   m_Name: Placer
   m_TagString: Untagged
@@ -491,10 +492,39 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7371927580192752168}
+        m_TargetAssemblyTypeName: PieceCombat.PlaySound, Assembly-CSharp
+        m_MethodName: Do
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _pieceLayer:
     serializedVersion: 2
     m_Bits: 8
   _checkRadius: 2
+--- !u!114 &7371927580192752168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5611559080492377519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f47c1f5bd7455893a04f1b09cb01ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: e9b117f4db277aa4c85cd41b9e967647, type: 3}
+  - {fileID: 8300000, guid: a2909c3a27a7bf341a5b25d891cdd1da, type: 3}
+  _volume: 1
+  _isUI: 1
 --- !u!1 &5611559080600850830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,6 +1085,7 @@ GameObject:
   - component: {fileID: 5611559081392266927}
   - component: {fileID: 5611559081392266926}
   - component: {fileID: 5611559081392266925}
+  - component: {fileID: 6216899860652109507}
   m_Layer: 5
   m_Name: Roll Dice Button
   m_TagString: Untagged
@@ -1256,6 +1287,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6216899860652109507}
+        m_TargetAssemblyTypeName: PieceCombat.PlaySound, Assembly-CSharp
+        m_MethodName: Do
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onCooldownTick:
     m_PersistentCalls:
       m_Calls:
@@ -1274,6 +1317,24 @@ MonoBehaviour:
   _onFinishCooldown:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6216899860652109507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5611559081392266920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f47c1f5bd7455893a04f1b09cb01ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 3bf161072f3652448bd1e01997c1f584, type: 3}
+  - {fileID: 8300000, guid: 18b52a4b1bc06334f808af7abfd96cc0, type: 3}
+  - {fileID: 8300000, guid: d2603a8075b230f489a293ba216504c4, type: 3}
+  _volume: 0.8
+  _isUI: 1
 --- !u!1 &5611559081490407949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,6 +1919,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5451849417989410984}
   - component: {fileID: 1205848876585514285}
+  - component: {fileID: 6687182742736988788}
   m_Layer: 0
   m_Name: _Spawner
   m_TagString: Untagged
@@ -1941,8 +2003,40 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _onSpawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6687182742736988788}
+        m_TargetAssemblyTypeName: PieceCombat.PlaySound, Assembly-CSharp
+        m_MethodName: Do
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _tileLength: 6
   _spawnOffset: {x: 0, y: 1, z: 0}
+--- !u!114 &6687182742736988788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8887087362745862294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f47c1f5bd7455893a04f1b09cb01ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 48ccb17b3de5364499f6c76018daf26d, type: 3}
+  - {fileID: 8300000, guid: 8e9bee025523c2445bda6626449bd54f, type: 3}
+  _volume: 0.3
+  _isUI: 1
 --- !u!1001 &287591076036398297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5702,6 +5796,22 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7997507590358253437}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1337192952404981117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3336699625260863453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f47c1f5bd7455893a04f1b09cb01ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 7080593cdf304847a672f3fece3df54a, type: 3}
+  _volume: 0.25
+  _isUI: 1
 --- !u!114 &7997507590358253409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5721,6 +5831,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: PieceCombat.Healthbar, Assembly-CSharp
         m_MethodName: Change
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1337192952404981117}
+        m_TargetAssemblyTypeName: PieceCombat.PlaySound, Assembly-CSharp
+        m_MethodName: Do
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

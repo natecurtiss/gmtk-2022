@@ -268,7 +268,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 127, y: -463.8}
+  m_AnchoredPosition: {x: 127, y: -390.78}
   m_SizeDelta: {x: 85.5, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &32278791
@@ -967,6 +967,51 @@ MonoBehaviour:
   scaleJigAmount: {x: 0.1, y: -0.1, z: 0.1}
   scaleFrequency: 10
   scaleTime: 0
+--- !u!1 &266862994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 266862995}
+  - component: {fileID: 266862996}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &266862995
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266862994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.20591523, y: 7.8071814, z: -4.3592415}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &266862996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266862994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5212395400cc484d8a78403c3f72d791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxAudioSources: 200
 --- !u!1 &309180322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1789,7 +1834,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10, y: -463.8}
+  m_AnchoredPosition: {x: -10, y: -390.78}
   m_SizeDelta: {x: 85.5, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &526491882
@@ -2170,6 +2215,7 @@ GameObject:
   - component: {fileID: 952892071}
   - component: {fileID: 952892070}
   - component: {fileID: 952892075}
+  - component: {fileID: 952892076}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2282,6 +2328,38 @@ MonoBehaviour:
   transitionTarget: {x: 0, y: 0}
   transitionDuration: 0.3
   spaceBarSceneName: Level 1
+  _onTransition:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 952892076}
+        m_TargetAssemblyTypeName: PieceCombat.PlaySound, Assembly-CSharp
+        m_MethodName: Do
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &952892076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952892069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f47c1f5bd7455893a04f1b09cb01ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - {fileID: 8300000, guid: 22a3590d779582946901ddc75ff41301, type: 3}
+  - {fileID: 8300000, guid: 69ef6c683b206084999066f0322c3d1e, type: 3}
+  _volume: 1
+  _isUI: 1
 --- !u!1 &956332011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2543,7 +2621,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1036966475
 GameObject:
@@ -4812,7 +4890,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -135, y: -463.8}
+  m_AnchoredPosition: {x: -135, y: -390.78}
   m_SizeDelta: {x: 58, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1881660531
@@ -5196,7 +5274,7 @@ PrefabInstance:
     - target: {fileID: 2397145723303078479, guid: 14837259da2155744b6f7a1bd85f378a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2397145723303078479, guid: 14837259da2155744b6f7a1bd85f378a,
         type: 3}
