@@ -7,7 +7,6 @@ namespace PieceCombat.Enemies
     abstract class Enemy : MonoBehaviour
     {
         [SerializeField] UnityEvent _onExplode;
-        [SerializeField] int _damage = 1;
         protected bool CanMove { get; private set; } = true;
         bool _isBlocking;
         float _blockTimer;
