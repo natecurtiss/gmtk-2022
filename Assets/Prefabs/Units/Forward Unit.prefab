@@ -136,7 +136,7 @@ MonoBehaviour:
   _onExplode:
     m_PersistentCalls:
       m_Calls: []
-  _end: 19
+  _end: 17
   _compare: 0
 --- !u!135 &8048605311028662154
 SphereCollider:

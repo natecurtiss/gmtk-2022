@@ -84,6 +84,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fedce34e00b3e8a4696073754e108bb0, type: 3}
+--- !u!1 &6359541165889010371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5620309131541906694, guid: fedce34e00b3e8a4696073754e108bb0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1566964178952470469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1677574302023850025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6359541165889010371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 541cdcc3d9dd45ee9a963943972f8e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 0.5
+  _onFinish:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6866773960064440855}
+        m_TargetAssemblyTypeName: PieceCombat.DestroyObject, Assembly-CSharp
+        m_MethodName: Do
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8225826138160450073 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7464427022015821276, guid: fedce34e00b3e8a4696073754e108bb0,
@@ -230,6 +264,33 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   <Type>k__BackingField: 1
+  _onExplode:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1677574302023850025}
+        m_TargetAssemblyTypeName: PieceCombat.Shrink, Assembly-CSharp
+        m_MethodName: Do
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6866773960064440855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5993385743424541218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b09cfdfac7b01b54e90cd404323d15b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5993385743424541230 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7403935028515903816, guid: 7173e6f40bcb77245896b26a404d4b8b,

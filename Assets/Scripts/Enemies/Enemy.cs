@@ -12,11 +12,18 @@ namespace PieceCombat.Enemies
         bool _isBlocking;
         float _blockTimer;
         BlockerUnit _blocker;
+        public SpawnPoint Tile { get; set; }
 
         void Update()
         {
             if (!_isBlocking)
+            {
+                if (!CanMove && _blocker != null && !_blocker.IsBlocking)
+                    CanMove = true;
+                else if (!CanMove && _blocker == null)
+                    CanMove = true;
                 return;
+            }
             _blockTimer -= Time.deltaTime;
             _blocker.Damage(_blockTimer);
             if (_blockTimer <= 0f)
@@ -31,12 +38,15 @@ namespace PieceCombat.Enemies
         {
             if (col.TryGetComponent<Unit>(out var unit))
             {
-                if (unit is BlockerUnit blockerUnit)
+                if (!_isBlocking && unit is BlockerUnit blockerUnit)
                 {
                     CanMove = false;
+                    if (blockerUnit.IsBlocking)
+                        return;
                     _isBlocking = true;
                     _blockTimer = Rules.BLOCK_TIME;
                     _blocker = blockerUnit;
+                    _blocker.IsBlocking = true;
                 }
                 else
                 {
@@ -45,17 +55,21 @@ namespace PieceCombat.Enemies
                     Explode();
                 }
             }
-            else if (col.TryGetComponent<HomeBase>(out var homeBase))
-            {
-                homeBase.Damage(_damage);
-                Explode();
-            }
         }
 
         void Explode()
         {
             _onExplode.Invoke();
+            if (Tile != null) 
+                Tile.IsOccupied = false;
+            CameraShake.Instance.Do();
             Destroy(gameObject);
+        }
+
+        public void UnOccupyTile()
+        {
+            if (Tile != null) 
+                Tile.IsOccupied = false;
         }
     }
 }
