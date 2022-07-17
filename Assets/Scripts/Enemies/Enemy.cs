@@ -13,7 +13,6 @@ namespace PieceCombat.Enemies
         bool _isBlocking;
         float _blockTimer;
         BlockerUnit _blocker;
-        public SpawnPoint Tile { get; set; }
 
         void Update()
         {
@@ -61,19 +60,11 @@ namespace PieceCombat.Enemies
         void Explode()
         {
             _onExplode.Invoke();
-            if (Tile != null) 
-                Tile.IsOccupied = false;
             Killed();
             CameraShake.Instance.Do();
             Destroy(gameObject);
         }
 
         public void Killed() => OnKill?.Invoke();
-
-        public void UnOccupyTile()
-        {
-            if (Tile != null) 
-                Tile.IsOccupied = false;
-        }
     }
 }

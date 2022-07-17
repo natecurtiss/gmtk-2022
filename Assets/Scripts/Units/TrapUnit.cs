@@ -7,8 +7,7 @@ namespace PieceCombat.Units
     {
         [SerializeField] UnityEvent _onExplode;
         [SerializeField] ParticleSystem _particles;
-        public SpawnPoint Tile { get; set; }
-        
+
         protected override void Go()
         {
             
@@ -19,13 +18,6 @@ namespace PieceCombat.Units
             var p = _particles.main;
             p.loop = false;
             _onExplode.Invoke();
-            UnOccupyTile();
-        }
-        
-        void UnOccupyTile()
-        {
-            if (Tile != null) 
-                Tile.IsOccupied = false;
         }
     }
 }

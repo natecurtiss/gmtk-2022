@@ -288,6 +288,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _pieceLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  _checkRadius: 2
 --- !u!1 &5611559080600850830
 GameObject:
   m_ObjectHideFlags: 0

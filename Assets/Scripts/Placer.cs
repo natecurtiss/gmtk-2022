@@ -11,9 +11,20 @@ namespace PieceCombat
         public static event Action OnPlace;
         
         [SerializeField] UnityEvent _onPlace;
+        [SerializeField] LayerMask _pieceLayer;
+        [SerializeField] float _checkRadius = 3f;
         bool _isPlacing;
         Unit _unit;
         SpawnPoint _hover;
+        RaycastHit[] _results = new RaycastHit[1];
+        SpawnPoint _spawn;
+
+        void OnDrawGizmos()
+        {
+            if (_spawn != null)
+                Gizmos.DrawSphere(_spawn.transform.position, 6f);
+            Gizmos.color = Color.red;
+        }
 
         void Update()
         {
@@ -28,6 +39,7 @@ namespace PieceCombat
             {
                 if (hit.collider.TryGetComponent<SpawnPoint>(out var spawn))
                 {
+                    _spawn = spawn;
                     if (!spawn.Allowed.Contains(_unit.Type))
                     {
                         if (_hover != null)
@@ -36,7 +48,7 @@ namespace PieceCombat
                         return;
                     }
 
-                    if (spawn.IsOccupied)
+                    if (Physics.SphereCastNonAlloc(spawn.transform.position, _checkRadius, Vector3.up, _results, _checkRadius, _pieceLayer) > 0)
                     {
                         if (_hover != null)
                             _hover.StopHover();

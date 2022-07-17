@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -3006104823396425440}
   - component: {fileID: 4178018012001133463}
   - component: {fileID: 674853692364976674}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Forward Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _damage: 1
 --- !u!135 &4178018012001133463
 SphereCollider:
   m_ObjectHideFlags: 0

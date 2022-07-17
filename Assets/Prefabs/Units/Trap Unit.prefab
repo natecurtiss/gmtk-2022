@@ -110,19 +110,7 @@ MonoBehaviour:
   <Type>k__BackingField: 1
   _onExplode:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8273859349003971718}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _particles: {fileID: 1741594178911155216}
 --- !u!1001 &3858780501083607045
 PrefabInstance:
@@ -231,12 +219,6 @@ PrefabInstance:
 --- !u!198 &1741594178911155216 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3289394395696718869, guid: fd8e2ef132271c241a372ecac46f0d10,
-    type: 3}
-  m_PrefabInstance: {fileID: 3858780501083607045}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8273859349003971718 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5142973706811210883, guid: fd8e2ef132271c241a372ecac46f0d10,
     type: 3}
   m_PrefabInstance: {fileID: 3858780501083607045}
   m_PrefabAsset: {fileID: 0}
