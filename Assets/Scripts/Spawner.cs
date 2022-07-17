@@ -13,6 +13,7 @@ namespace PieceCombat
 {
     class Spawner : MonoBehaviour
     {
+        static Spawner _instance;
         [SerializeField] Spawn[] _spawns;
         [SerializeField] UnityEvent _onWaveFinished;
         [SerializeField] UnityEvent _onSpawn;
@@ -21,10 +22,22 @@ namespace PieceCombat
 
         List<Spawn> _remaining;
         readonly List<Transform> _spawnPoints = new();
-        Enemy _last;
+
+        public static int Enemies
+        {
+            get => _enemies;
+            set
+            {
+                _enemies = value;
+                if (_enemies <= 0 && _instance._remaining.Count == 0)
+                    _instance.LastKilled();
+            }
+        }
+        static int _enemies;
 
         void Awake()
         {
+            _instance = this;
             _remaining = _spawns.ToList();
             for (var i = 0; i < transform.childCount; i++) 
                 _spawnPoints.Add(transform.GetChild(i));
@@ -53,22 +66,20 @@ namespace PieceCombat
                 {
                     if (!hit.collider.TryGetComponent<Unit>(out _) && !hit.collider.TryGetComponent<Enemy>(out _))
                     {
-                        _last = Instantiate(_remaining[0].Enemy, spawnPoint.position + _spawnOffset, Quaternion.identity);
+                        Instantiate(_remaining[0].Enemy, spawnPoint.position + _spawnOffset, Quaternion.identity);
                         _remaining.RemoveAt(0);
                         _onSpawn.Invoke();
-                        if (_remaining.Count == 0) 
-                            _last.Spawner = this;
+                        Enemies++;
                     }
                     else
                         continue;
                 }
                 else
                 {
-                    _last = Instantiate(_remaining[0].Enemy, spawnPoint.position + _spawnOffset, Quaternion.identity);
+                    Instantiate(_remaining[0].Enemy, spawnPoint.position + _spawnOffset, Quaternion.identity);
                     _remaining.RemoveAt(0);
                     _onSpawn.Invoke();
-                    if (_remaining.Count == 0) 
-                        _last.Spawner = this;
+                    Enemies++;
                 }
                 break;
             }

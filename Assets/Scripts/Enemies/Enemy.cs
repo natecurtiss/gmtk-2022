@@ -12,7 +12,6 @@ namespace PieceCombat.Enemies
         bool _isBlocking;
         float _blockTimer;
         BlockerUnit _blocker;
-        public Spawner Spawner { get; set; }
 
         void Update()
         {
@@ -59,8 +58,7 @@ namespace PieceCombat.Enemies
 
         void Explode()
         {
-            if (Spawner != null) 
-                Spawner.LastKilled();
+            Spawner.Enemies--;
             _onExplode.Invoke();
             CameraShake.Instance.Do();
             Destroy(gameObject);
