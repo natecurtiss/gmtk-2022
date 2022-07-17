@@ -4,9 +4,9 @@ namespace PieceCombat
 {
     class PlaySound : MonoBehaviour
     {
-        [SerializeField] AudioClip _sound;
+        [SerializeField] AudioClip[] _sounds;
         [SerializeField] float _volume = 1f;
 
-        public void Do() => SoundManager.Instance.PlaySound(_sound, transform.position, _volume);
+        public void Do() => SoundManager.Instance.PlaySound(_sounds[Random.Range(0, _sounds.Length)], transform.position, _volume);
     }
 }
