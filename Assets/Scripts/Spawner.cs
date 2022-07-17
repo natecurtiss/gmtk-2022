@@ -36,7 +36,7 @@ namespace PieceCombat
             {
                 if (_remaining.Count == 0)
                 {
-                    _onWaveFinished.Invoke();
+                    // _onWaveFinished.Invoke();
                 }
                 yield return new WaitForSeconds(_remaining[0].Delay);
                 TrySpawn();
@@ -56,6 +56,8 @@ namespace PieceCombat
                         Instantiate(_remaining[0].Enemy, spawnPoint.position + _spawnOffset, Quaternion.identity);
                         _last = _remaining[0].Enemy;
                         _remaining.RemoveAt(0);
+                        if (_remaining.Count == 0) 
+                            _last.OnKill += FinishWave;
                     }
                     else
                         continue;
@@ -67,6 +69,12 @@ namespace PieceCombat
                 }
                 break;
             }
+        }
+
+        void FinishWave()
+        {
+            _last.OnKill -= FinishWave;
+            _onWaveFinished.Invoke();
         }
     }
 

@@ -21,9 +21,18 @@ namespace PieceCombat
                 IsOccupied = true;
                 e.Tile = this;
             }
-            else if (other.TryGetComponent<Unit>(out _))
+            else if (other.TryGetComponent<Unit>(out var u))
             {
-                IsOccupied = true;
+                if (u is BlockerUnit b)
+                {
+                    IsOccupied = true;
+                    b.Tile = this;
+                }
+                else if (u is TrapUnit t)
+                {
+                    IsOccupied = true;
+                    t.Tile = this;
+                }
             }
         }
         
@@ -37,9 +46,24 @@ namespace PieceCombat
                     IsOccupied = false;
                 }
             }
-            else if (other.TryGetComponent<Unit>(out _))
+            else if (other.TryGetComponent<Unit>(out var u))
             {
-                IsOccupied = false;
+                if (u is BlockerUnit b)
+                {
+                    if (b.Tile == this)
+                    {
+                        b.Tile = null;
+                        IsOccupied = false;
+                    }
+                }
+                else if (u is TrapUnit t)
+                {
+                    if (t.Tile == this)
+                    {
+                        t.Tile = null;
+                        IsOccupied = false;
+                    }
+                }
             }
         }
 

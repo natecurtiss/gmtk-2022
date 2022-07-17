@@ -7,6 +7,7 @@ namespace PieceCombat.Enemies
 {
     abstract class Enemy : MonoBehaviour
     {
+        public event Action OnKill;
         [SerializeField] UnityEvent _onExplode;
         protected bool CanMove { get; private set; } = true;
         bool _isBlocking;
@@ -62,9 +63,12 @@ namespace PieceCombat.Enemies
             _onExplode.Invoke();
             if (Tile != null) 
                 Tile.IsOccupied = false;
+            Killed();
             CameraShake.Instance.Do();
             Destroy(gameObject);
         }
+
+        public void Killed() => OnKill?.Invoke();
 
         public void UnOccupyTile()
         {

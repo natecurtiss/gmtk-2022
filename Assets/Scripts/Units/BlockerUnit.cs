@@ -7,6 +7,7 @@ namespace PieceCombat.Units
     {
         [SerializeField] UnityEvent _onExplode;
         public bool IsBlocking { get; set; }
+        public SpawnPoint Tile { get; set; }
         
         protected override void Go()
         {
@@ -18,6 +19,16 @@ namespace PieceCombat.Units
             
         }
 
-        public void Explode() => _onExplode.Invoke();
+        public void Explode()
+        {
+            _onExplode.Invoke();
+            UnOccupyTile();
+        }
+
+        void UnOccupyTile()
+        {
+            if (Tile != null) 
+                Tile.IsOccupied = false;
+        }
     }
 }
