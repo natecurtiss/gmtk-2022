@@ -4,7 +4,6 @@ namespace PieceCombat
 {
     public class SceneStart : MonoBehaviour
     {
-
         [SerializeField] string MusicName;
 
         void Start()

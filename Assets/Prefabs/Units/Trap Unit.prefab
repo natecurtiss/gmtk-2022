@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2841734354353612559, guid: 7173e6f40bcb77245896b26a404d4b8b,
+        type: 3}
+      propertyPath: _delay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7191230012919196655, guid: 7173e6f40bcb77245896b26a404d4b8b,
         type: 3}
       propertyPath: m_IsActive
@@ -77,9 +82,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 328928e9588ee2a48be271780ebcc156, type: 2}
+    - target: {fileID: 8048605311028662154, guid: 7173e6f40bcb77245896b26a404d4b8b,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.25
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6027837666241258095, guid: 7173e6f40bcb77245896b26a404d4b8b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7173e6f40bcb77245896b26a404d4b8b, type: 3}
+--- !u!114 &1602319942468826723 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2841734354353612559, guid: 7173e6f40bcb77245896b26a404d4b8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3554267171903607148}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6310462849905231912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b09cfdfac7b01b54e90cd404323d15b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6310462849905231908 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7403935028515903816, guid: 7173e6f40bcb77245896b26a404d4b8b,
@@ -129,6 +151,18 @@ MonoBehaviour:
       - m_Target: {fileID: 5905203547110677852}
         m_TargetAssemblyTypeName: PieceCombat.PlaySound, Assembly-CSharp
         m_MethodName: Do
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1602319942468826723}
+        m_TargetAssemblyTypeName: PieceCombat.DestroyObject, Assembly-CSharp
+        m_MethodName: DoWait
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -49,9 +49,10 @@ namespace PieceCombat
             }
         }
 
+        bool _dontReplayCheck;
+        
         public void PlayMusic(string _name) {
             if (MusicSource) {
-                MusicSource.Stop();
                 AudioClip _clip = null;
                 foreach (AudioClip clip in Music) {
                     if (clip.name == _name) {
@@ -62,7 +63,17 @@ namespace PieceCombat
                 if (_clip != null) {
                     MusicSource.clip = _clip;
                     MusicSource.loop = _name == "GMTK_Main_Soundtrack";
-
+                    if (MusicSource.loop)
+                    {
+                        if (_dontReplayCheck)
+                            return;
+                        _dontReplayCheck = true;
+                    }
+                    else
+                    {
+                        _dontReplayCheck = false;
+                    }
+                    MusicSource.Stop();
                     MusicSource.Play();
                 }
             }

@@ -60,6 +60,11 @@ namespace PieceCombat.Enemies
         {
             Spawner.Enemies--;
             _onExplode.Invoke();
+            if (_isBlocking && _blocker != null)
+            {
+                _isBlocking = false;
+                _blocker.IsBlocking = false;
+            }
             CameraShake.Instance.Do();
             Destroy(gameObject);
         }

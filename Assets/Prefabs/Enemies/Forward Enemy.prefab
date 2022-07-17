@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sounds:
   - {fileID: 8300000, guid: 80b35ab01fabe2b4988bfd77d07044ab, type: 3}
-  _volume: 0.2
+  _volume: 0.35
   _isUI: 1
 --- !u!1001 &878136860772537271
 PrefabInstance:
