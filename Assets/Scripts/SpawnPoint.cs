@@ -31,9 +31,11 @@ namespace PieceCombat
         {
             if (other.TryGetComponent<Enemy>(out var e))
             {
-                IsOccupied = false;
                 if (e.Tile == this)
+                {
                     e.Tile = null;
+                    IsOccupied = false;
+                }
             }
             else if (other.TryGetComponent<Unit>(out _))
             {
