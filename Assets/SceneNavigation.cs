@@ -24,7 +24,12 @@ namespace PieceCombat
             if (!Input.GetKeyDown(KeyCode.Space) && !transitioning) {
                 return;
             } else {
-                if (!transitioning) {
+				if (!transitionBeforeScene) {
+					SceneManager.LoadScene(spaceBarSceneName);
+                    return;
+				}
+
+				if (!transitioning) {
                     transitionStart = transition.anchoredPosition;
                     transitioning = true;
                 }
