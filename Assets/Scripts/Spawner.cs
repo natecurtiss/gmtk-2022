@@ -20,6 +20,7 @@ namespace PieceCombat
 
         List<Spawn> _remaining;
         readonly List<Transform> _spawnPoints = new();
+        Enemy _last;
 
         void Awake()
         {
@@ -36,7 +37,6 @@ namespace PieceCombat
                 if (_remaining.Count == 0)
                 {
                     _onWaveFinished.Invoke();
-                    Debug.Log("Wave done.");
                 }
                 yield return new WaitForSeconds(_remaining[0].Delay);
                 TrySpawn();
@@ -54,6 +54,7 @@ namespace PieceCombat
                     if (!hit.collider.TryGetComponent<Unit>(out _) && !hit.collider.TryGetComponent<Enemy>(out _))
                     {
                         Instantiate(_remaining[0].Enemy, spawnPoint.position + _spawnOffset, Quaternion.identity);
+                        _last = _remaining[0].Enemy;
                         _remaining.RemoveAt(0);
                     }
                     else
