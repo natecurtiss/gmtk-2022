@@ -13,7 +13,7 @@ namespace PieceCombat.Enemies
         
         void Awake() => _rigidbody = GetComponent<Rigidbody>();
 
-        void Update()
+        void FixedUpdate()
         {
             if (!CanMove)
                 return;

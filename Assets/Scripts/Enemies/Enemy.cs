@@ -16,8 +16,14 @@ namespace PieceCombat.Enemies
 
         void Update()
         {
+            Debug.Log("no block");
             if (!_isBlocking)
+            {
+                if (!CanMove && _blocker != null && !_blocker.IsBlocking)
+                    CanMove = true;
                 return;
+            }
+            Debug.Log(Time.deltaTime);
             _blockTimer -= Time.deltaTime;
             _blocker.Damage(_blockTimer);
             if (_blockTimer <= 0f)
@@ -32,12 +38,15 @@ namespace PieceCombat.Enemies
         {
             if (col.TryGetComponent<Unit>(out var unit))
             {
-                if (unit is BlockerUnit blockerUnit)
+                if (!_isBlocking && unit is BlockerUnit blockerUnit)
                 {
                     CanMove = false;
+                    if (blockerUnit.IsBlocking)
+                        return;
                     _isBlocking = true;
                     _blockTimer = Rules.BLOCK_TIME;
                     _blocker = blockerUnit;
+                    _blocker.IsBlocking = true;
                 }
                 else
                 {

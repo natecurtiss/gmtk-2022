@@ -1,5 +1,7 @@
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace PieceCombat
 {
@@ -10,6 +12,7 @@ namespace PieceCombat
         MeshRenderer _renderer;
         [SerializeField] float _alpha = 0.5f;
         [SerializeField] float _duration = 0.2f;
+        [SerializeField] UnityEvent _onFinish;
         bool _isFaded;
 
         void Awake()
@@ -25,6 +28,7 @@ namespace PieceCombat
                 return;
             _isFaded = true;
             _renderer.material.DOColor(_to, _duration);
+            StartCoroutine(OnFinish());
         }
 
         public void Stop()
@@ -33,6 +37,12 @@ namespace PieceCombat
                 return;
             _isFaded = false;
             _renderer.material.DOColor(_initial, _duration);
+        }
+
+        IEnumerator OnFinish()
+        {
+            yield return new WaitForSeconds(_duration);
+            _onFinish.Invoke();
         }
     }
 }
