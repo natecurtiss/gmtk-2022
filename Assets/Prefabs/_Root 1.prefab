@@ -1526,7 +1526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawns:
-  - <Delay>k__BackingField: 0
+  - <Delay>k__BackingField: 1
     <Enemy>k__BackingField: {fileID: -3006104823396425440, guid: fbcbbdba68159ff49b0fee19f0e4b717,
       type: 3}
   - <Delay>k__BackingField: 4
