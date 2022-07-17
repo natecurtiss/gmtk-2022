@@ -16,14 +16,12 @@ namespace PieceCombat.Enemies
 
         void Update()
         {
-            Debug.Log("no block");
             if (!_isBlocking)
             {
                 if (!CanMove && _blocker != null && !_blocker.IsBlocking)
                     CanMove = true;
                 return;
             }
-            Debug.Log(Time.deltaTime);
             _blockTimer -= Time.deltaTime;
             _blocker.Damage(_blockTimer);
             if (_blockTimer <= 0f)
@@ -54,11 +52,6 @@ namespace PieceCombat.Enemies
                         trapUnit.Explode();
                     Explode();
                 }
-            }
-            else if (col.TryGetComponent<HomeBase>(out var homeBase))
-            {
-                homeBase.Damage(_damage);
-                Explode();
             }
         }
 

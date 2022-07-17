@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.4886081, g: 0.514418, b: 0.5660378, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 410087040}
   m_IndirectSpecularColor: {r: 0.17282481, g: 0.21597026, b: 0.29791775, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -5125,6 +5125,62 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38027ee0cb0c12b478152859b479f828, type: 3}
+--- !u!1 &2530065897227883952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2530065896249477631, guid: 38027ee0cb0c12b478152859b479f828,
+    type: 3}
+  m_PrefabInstance: {fileID: 2530065897227883951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2530065897227883953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4661942936379945120, guid: 38027ee0cb0c12b478152859b479f828,
+    type: 3}
+  m_PrefabInstance: {fileID: 2530065897227883951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2530065897227883954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2530065897227883952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92495a34ee648fbafac2a4e8645a8c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 0.2
+--- !u!114 &2530065897227883955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2530065897227883953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 784f8f4bf6854770ae74caee3e72342e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onHealthChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2530065897227883954}
+        m_TargetAssemblyTypeName: PieceCombat.Healthbar, Assembly-CSharp
+        m_MethodName: Change
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onDie:
+    m_PersistentCalls:
+      m_Calls: []
+  _startHealth: 3
 --- !u!1001 &3482384575106332793
 PrefabInstance:
   m_ObjectHideFlags: 0
