@@ -494,6 +494,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 773190237, guid: c2a21a4943480274b827bca4d472c48c,
         type: 3}
+    - target: {fileID: 1205848876585514285, guid: cb0b2c0b9e0d4b947b69702805b77d11,
+        type: 3}
+      propertyPath: _onWaveFinished.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Win
+      objectReference: {fileID: 0}
     - target: {fileID: 2860125084777623428, guid: cb0b2c0b9e0d4b947b69702805b77d11,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -550,6 +555,33 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602678722391079191, guid: cb0b2c0b9e0d4b947b69702805b77d11,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0e74d01a0d83a294a8752ec1e98443e6,
+        type: 2}
+    - target: {fileID: 3602678722391079191, guid: cb0b2c0b9e0d4b947b69702805b77d11,
+        type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602678722391079191, guid: cb0b2c0b9e0d4b947b69702805b77d11,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6174364562940034431, guid: 0e74d01a0d83a294a8752ec1e98443e6,
+        type: 2}
+    - target: {fileID: 3602678722391079191, guid: cb0b2c0b9e0d4b947b69702805b77d11,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 33554431
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602678722391079191, guid: cb0b2c0b9e0d4b947b69702805b77d11,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3625741036980492397, guid: cb0b2c0b9e0d4b947b69702805b77d11,
         type: 3}
@@ -1115,6 +1147,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.49803925
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342475216526855632, guid: cb0b2c0b9e0d4b947b69702805b77d11,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 343.1
       objectReference: {fileID: 0}
     - target: {fileID: 8987645488922640940, guid: cb0b2c0b9e0d4b947b69702805b77d11,
         type: 3}

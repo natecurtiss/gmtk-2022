@@ -2280,7 +2280,7 @@ MonoBehaviour:
   transitionBeforeScene: 1
   transition: {fileID: 1690264618}
   transitionTarget: {x: 0, y: 0}
-  transitionDuration: 1
+  transitionDuration: 0.3
   spaceBarSceneName: Level 1
 --- !u!1 &956332011
 GameObject:

@@ -5,11 +5,24 @@ namespace PieceCombat
 {
     class SceneTransition : MonoBehaviour
     {
-        // TODO: Make this transition
+        [SerializeField] Animator animator;
         public void Change()
         {
-            var next = SceneManager.GetActiveScene().buildIndex + 1;
-            SceneManager.LoadScene(next);
+            animator.Play("WaveComplete");
+            /*var next = SceneManager.GetActiveScene().buildIndex + 1;
+            SceneManager.LoadScene(next);*/
+        }
+
+        public void Lose() {
+            animator.Play("BlackSwipeIn");
+            /*var next = SceneManager.GetActiveScene().buildIndex + 1;
+            SceneManager.LoadScene(next);*/
+        }
+
+        public void Win() {
+            animator.Play("WhiteFadeIn");
+            /*var next = SceneManager.GetActiveScene().buildIndex + 1;
+            SceneManager.LoadScene(next);*/
         }
     }
 }
