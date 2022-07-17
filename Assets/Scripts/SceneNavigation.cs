@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 namespace PieceCombat
@@ -12,6 +13,7 @@ namespace PieceCombat
         Vector2 transitionStart;
         [SerializeField] float transitionDuration;
         [SerializeField] string spaceBarSceneName;
+        [SerializeField] UnityEvent _onTransition;
 
         bool transitioning = false;
         float time;
@@ -32,6 +34,7 @@ namespace PieceCombat
 				if (!transitioning) {
                     transitionStart = transition.anchoredPosition;
                     transitioning = true;
+                    _onTransition.Invoke();
                 }
             }
 
