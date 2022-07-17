@@ -53,27 +53,28 @@ namespace PieceCombat
                 {
                     if (!hit.collider.TryGetComponent<Unit>(out _) && !hit.collider.TryGetComponent<Enemy>(out _))
                     {
-                        Instantiate(_remaining[0].Enemy, spawnPoint.position + _spawnOffset, Quaternion.identity);
-                        _last = _remaining[0].Enemy;
+                        _last = Instantiate(_remaining[0].Enemy, spawnPoint.position + _spawnOffset, Quaternion.identity);
                         _remaining.RemoveAt(0);
                         if (_remaining.Count == 0) 
-                            _last.OnKill += FinishWave;
+                            _last.Spawner = this;
                     }
                     else
                         continue;
                 }
                 else
                 {
-                    Instantiate(_remaining[0].Enemy, spawnPoint.position + _spawnOffset, Quaternion.identity);
+                    _last = Instantiate(_remaining[0].Enemy, spawnPoint.position + _spawnOffset, Quaternion.identity);
                     _remaining.RemoveAt(0);
+                    if (_remaining.Count == 0) 
+                        _last.Spawner = this;
                 }
                 break;
             }
         }
 
-        void FinishWave()
+        public void LastKilled()
         {
-            _last.OnKill -= FinishWave;
+            Debug.Log("LOL");
             _onWaveFinished.Invoke();
         }
     }

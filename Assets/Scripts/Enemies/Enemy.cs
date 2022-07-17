@@ -7,12 +7,12 @@ namespace PieceCombat.Enemies
 {
     abstract class Enemy : MonoBehaviour
     {
-        public event Action OnKill;
         [SerializeField] UnityEvent _onExplode;
         protected bool CanMove { get; private set; } = true;
         bool _isBlocking;
         float _blockTimer;
         BlockerUnit _blocker;
+        public Spawner Spawner { get; set; }
 
         void Update()
         {
@@ -59,12 +59,15 @@ namespace PieceCombat.Enemies
 
         void Explode()
         {
+            Debug.Log(Spawner);
+            if (Spawner != null)
+            {
+             
+                Spawner.LastKilled();
+            }
             _onExplode.Invoke();
-            Killed();
             CameraShake.Instance.Do();
             Destroy(gameObject);
         }
-
-        public void Killed() => OnKill?.Invoke();
     }
 }
