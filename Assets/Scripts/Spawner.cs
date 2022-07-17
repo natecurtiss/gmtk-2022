@@ -25,7 +25,6 @@ namespace PieceCombat
         void Awake()
         {
             _remaining = _spawns.ToList();
-            Debug.Log(_remaining.Count);
             for (var i = 0; i < transform.childCount; i++) 
                 _spawnPoints.Add(transform.GetChild(i));
         }
@@ -72,11 +71,7 @@ namespace PieceCombat
             }
         }
 
-        public void LastKilled()
-        {
-            Debug.Log("LOL");
-            _onWaveFinished.Invoke();
-        }
+        public void LastKilled() => _onWaveFinished.Invoke();
     }
 
     [Serializable]

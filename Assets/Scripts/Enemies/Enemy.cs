@@ -59,12 +59,8 @@ namespace PieceCombat.Enemies
 
         void Explode()
         {
-            Debug.Log(Spawner);
-            if (Spawner != null)
-            {
-             
+            if (Spawner != null) 
                 Spawner.LastKilled();
-            }
             _onExplode.Invoke();
             CameraShake.Instance.Do();
             Destroy(gameObject);
