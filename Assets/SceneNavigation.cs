@@ -38,17 +38,17 @@ namespace PieceCombat
 			if (transitioning) {
                 time += Time.deltaTime;
                 float _timeRatio = time / transitionDuration;
-                Debug.Log("Is transitioning at " + _timeRatio);
+                //Debug.Log("Is transitioning at " + _timeRatio);
                 Vector2 _lerpValue = Vector2.Lerp(transitionStart, transitionTarget, _timeRatio);
-                Debug.Log("Is transitioning at " + _timeRatio + ", " + _lerpValue);
+                //Debug.Log("Is transitioning at " + _timeRatio + ", " + _lerpValue);
                 transition.anchoredPosition = _lerpValue;
 			}
 
             if (time < transitionDuration) {
-                Debug.Log("Elapsed time is less than duration");
+                //Debug.Log("Elapsed time is less than duration");
                 return;
             } else {
-                Debug.Log("Setting Target and changing scene");
+                //Debug.Log("Setting Target and changing scene");
                 transitioning = false;
                 transition.anchoredPosition = transitionTarget;
             }
