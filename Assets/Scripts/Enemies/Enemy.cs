@@ -17,7 +17,6 @@ namespace PieceCombat.Enemies
         {
             if (!_isBlocking)
                 return;
-            Debug.Log("BLOCK");
             _blockTimer -= Time.deltaTime;
             _blocker.Damage(_blockTimer);
             if (_blockTimer <= 0f)
