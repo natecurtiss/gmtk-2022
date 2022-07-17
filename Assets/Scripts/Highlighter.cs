@@ -11,6 +11,11 @@ namespace PieceCombat
         void Awake()
         {
             _transition = GetComponent<SlideUp>();
+            
+            Dice.OnRollFrontUnit += _transition.Stop;
+            Dice.OnRollAnywhereUnit += _transition.Stop;
+            Placer.OnPlace += _transition.Stop;
+            
             if (_type == UnitType.Anywhere)
             {
                 Dice.OnRollAnywhereUnit += _transition.Do;
@@ -20,11 +25,14 @@ namespace PieceCombat
                 Dice.OnRollFrontUnit += _transition.Do;
                 Dice.OnRollAnywhereUnit += _transition.Do;
             }
-            Placer.OnPlace += _transition.Stop;
         }
 
         void OnDestroy()
         {
+            Dice.OnRollFrontUnit -= _transition.Stop;
+            Dice.OnRollAnywhereUnit -= _transition.Stop;
+            Placer.OnPlace -= _transition.Stop;
+            
             if (_type == UnitType.Anywhere)
             {
                 Dice.OnRollAnywhereUnit -= _transition.Do;
@@ -34,7 +42,6 @@ namespace PieceCombat
                 Dice.OnRollFrontUnit -= _transition.Do;
                 Dice.OnRollAnywhereUnit -= _transition.Do;
             }
-            Placer.OnPlace -= _transition.Stop;
         }
     }
 }
