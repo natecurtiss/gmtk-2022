@@ -92,6 +92,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3554267171903607148}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5905203547110677852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6310462849905231912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f47c1f5bd7455893a04f1b09cb01ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds: []
+  _volume: 1
+  _isUI: 0
 --- !u!114 &8851480371120726093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +125,19 @@ MonoBehaviour:
   <Type>k__BackingField: 1
   _onExplode:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5905203547110677852}
+        m_TargetAssemblyTypeName: PieceCombat.PlaySound, Assembly-CSharp
+        m_MethodName: Do
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _particles: {fileID: 1741594178911155216}
 --- !u!1001 &3858780501083607045
 PrefabInstance:
