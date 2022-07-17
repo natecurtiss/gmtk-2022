@@ -38,7 +38,7 @@ namespace PieceCombat
         void Awake()
         {
             _instance = this;
-            Enemies = 0;
+            _enemies = 0;
             _remaining = _spawns.ToList();
             for (var i = 0; i < transform.childCount; i++) 
                 _spawnPoints.Add(transform.GetChild(i));
