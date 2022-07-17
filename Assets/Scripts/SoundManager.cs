@@ -38,11 +38,12 @@ namespace PieceCombat
             }
         }
 
-        public void PlaySound(AudioClip sound, Vector3 position, float volume = 1f)
+        public void PlaySound(AudioClip sound, Vector3 position, float volume = 1f, bool isUI = false)
         {
             if (_audioSources.Count == 0)
                 return;
             var aud = _audioSources.Dequeue();
+            aud.spatialBlend = isUI ? 0f : 1f;
             aud.clip = sound;
             aud.pitch = Random.Range(0.9f, 1.1f);
             aud.volume = volume;
